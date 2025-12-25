@@ -28,8 +28,8 @@ A full-stack web application inspired by Airbnb, built with Node.js, Express, Mo
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
-   cd airbnb
+   git clone https://github.com/vivekyadav-3/haven-hop.git
+   cd haven-hop
    ```
 
 2. **Install dependencies**
