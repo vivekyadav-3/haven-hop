@@ -255,6 +255,11 @@ app.delete("/listings/:id/reviews/:reviewId", isLoggedIn, isReviewAuthor, async 
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => {
-  console.log(`server is listening to port ${PORT}`);
-});
+// Vercel handles the server start in production
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`server is listening to port ${PORT}`);
+  });
+}
+
+module.exports = app;
