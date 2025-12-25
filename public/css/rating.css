@@ -1,0 +1,45 @@
+/* Simple Star Rating CSS by purely CSS */
+
+.star-rating {
+    border: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end; /* Align to the left (start) */
+    padding: 0;
+}
+
+.star-rating > input {
+    display: none;
+}
+
+.star-rating > label {
+    color: #ddd;
+    font-size: 2rem;
+    padding: 0 0.1rem;
+    cursor: pointer;
+}
+
+.star-rating > label::before {
+    content: "\2605"; /* Solid star unicode */
+    display: inline-block;
+    transition: color 0.1s;
+}
+
+/* Checked State */
+.star-rating > input:checked ~ label {
+    color: #ffc107; /* Warning Yellow */
+}
+
+/* Hover State */
+.star-rating > label:hover,
+.star-rating > label:hover ~ label {
+    color: #ffc107;
+}
+
+/* Hover over checked state (make sure they stay yellow or change) */
+.star-rating > input:checked + label:hover,
+.star-rating > input:checked ~ label:hover,
+.star-rating > label:hover ~ input:checked ~ label,
+.star-rating > input:checked ~ label:hover ~ label {
+    color: #ffc107;
+}

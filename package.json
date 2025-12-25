@@ -1,0 +1,33 @@
+{
+  "name": "haven-hop",
+  "version": "1.0.0",
+  "description": "A full-stack Airbnb clone with user authentication, listings, reviews, and interactive maps",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["airbnb", "clone", "express", "mongodb", "nodejs", "ejs"],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/haven-hop"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.16.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "ejs-mate": "^4.0.0",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.20.2",
+    "node-geocoder": "^4.4.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^9.0.0"
+  }
+}
