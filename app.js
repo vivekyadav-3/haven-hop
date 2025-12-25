@@ -22,32 +22,27 @@ const options = {
 };
 const geocoder = NodeGeocoder(options);
 
-// MONGO_URL should be replaced with your actual connection string usually
-const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/haven_hop";
-
-main()
+// Database Connection
+const dbUrl = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/haven_hop";
+mongoose.connect(dbUrl)
   .then(() => {
     console.log("connected to DB");
   })
   .catch((err) => {
-    console.log(err);
+    console.log("DB Connection Error:", err);
   });
 
-async function main() {
-  await mongoose.connect(MONGO_URL);
-}
-
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/views"));
+app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 const MongoStore = require('connect-mongo');
 
 const store = MongoStore.create({
-  mongoUrl: MONGO_URL,
+  mongoUrl: dbUrl,
   crypto: {
     secret: process.env.SESSION_SECRET || "mysupersecretcode",
   },
