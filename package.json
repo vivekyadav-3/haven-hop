@@ -8,7 +8,14 @@
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["airbnb", "clone", "express", "mongodb", "nodejs", "ejs"],
+  "keywords": [
+    "airbnb",
+    "clone",
+    "express",
+    "mongodb",
+    "nodejs",
+    "ejs"
+  ],
   "author": "",
   "license": "MIT",
   "repository": {
@@ -18,6 +25,7 @@
   "dependencies": {
     "@mapbox/mapbox-sdk": "^0.16.2",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^6.0.0",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
