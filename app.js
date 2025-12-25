@@ -238,6 +238,8 @@ app.delete("/listings/:id/reviews/:reviewId", isLoggedIn, isReviewAuthor, async 
   res.redirect(`/listings/${id}`);
 });
 
-app.listen(8080, () => {
-  console.log("server is listening to port 8080");
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`server is listening to port ${PORT}`);
 });
